@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #ffebd2;
+  color: #333;
+  text-align: center;
+}
+
+header {
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+}
+
+header p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.top-img {
+  max-width: 450px; /* largura máxima */
+  height: auto;
+  display: block;
+  margin: 0 auto 5px auto; /* centraliza e dá espaço abaixo */
+}
+
+.ranking {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 10px;
+}
+
+.rank-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #00000049, #fff);
+  border: 2px solid #171718c9;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+}
+
+.pontos {
+  background-color: rgb(0, 0, 0);
+  padding: 5px 5px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: white;
+  border: 1px solid #000000;
+}
+
+
+.posicao {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: bold;
+}
+
+.posicao img {
+  width: 20px;
+  height: 20px;
+}
+
+.numero {
+  font-size: 1.5rem;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.nome {
+  font-weight: bold;
+}
+
+
