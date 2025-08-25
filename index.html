@@ -17,6 +17,7 @@
     <img src="src/clothes1.png" alt="Roupas" class="top-img animate__animated animate__bounce">
     <h1>RANKING SOLIDÁRIO</h1>
     <p>Aqueça vidas com suas doações!</p>
+    <p>Ranking encerrado em 25-08-25 parabéns <b>Pod Cast Sem Script</b></p>
   </header>
 
   <!-- Ranking -->
@@ -42,8 +43,16 @@ function handleData(data) {
     // Posição
     const posicao = document.createElement("div");
     posicao.className = "posicao";
-    posicao.innerHTML = `<a></a><span class="numero">${index + 1}</span>`;
 
+    if(index == 0){
+
+
+      rankItem.style.backgroundColor = "#ffa200"
+      rankItem.style.background = "linear-gradient(90deg,rgba(255, 162, 0, 1) 0%, rgba(199, 173, 87, 1) 100%, rgba(237, 221, 83, 1) 100%);"
+      rankItem.style.border = "1px solid #ffa200"
+
+
+    posicao.innerHTML = `<a><img src="src/coroa.png" alt="Logo" class="logo" height = "2500px"></a><span class="numero">${index + 1}</span>`;
     // Time
     const time = document.createElement("div");
     time.className = "time";
@@ -60,13 +69,82 @@ function handleData(data) {
     rankItem.appendChild(pontos);
 
     rankingContainer.appendChild(rankItem);
+
+
+    }else{
+          posicao.innerHTML = `<a></a><span class="numero">${index + 1}</span>`;
+    // Time
+    const time = document.createElement("div");
+    time.className = "time";
+    time.innerHTML = `<img src="src/${item.TURMA}.jpg" alt="Logo" class="logo"><span class="nome">${item.TURMA}</span>`;
+
+    // Pontos
+    const pontos = document.createElement("div");
+    pontos.className = "pontos";
+    pontos.textContent = `${item.TOTAL} pt`;
+
+    // Monta
+    rankItem.appendChild(posicao);
+    rankItem.appendChild(time);
+    rankItem.appendChild(pontos);
+
+    rankingContainer.appendChild(rankItem);
+    }
+
+
   });
+
+    const count = 200,
+  defaults = {
+    origin: { y: 0.7 },
+  };
+
+function fire(particleRatio, opts) {
+  confetti(
+    Object.assign({}, defaults, opts, {
+      particleCount: Math.floor(count * particleRatio),
+    })
+  );
+}
+
+fire(0.25, {
+  spread: 26,
+  startVelocity: 55,
+});
+
+fire(0.2, {
+  spread: 60,
+});
+
+fire(0.35, {
+  spread: 100,
+  decay: 0.91,
+  scalar: 0.8,
+});
+
+fire(0.1, {
+  spread: 120,
+  startVelocity: 25,
+  decay: 0.92,
+  scalar: 1.2,
+});
+
+fire(0.1, {
+  spread: 120,
+  startVelocity: 45,
+});
 }
 
 // cria a tag <script> para fazer a chamada JSONP
 var script = document.createElement('script');
 script.src = 'https://script.google.com/macros/s/AKfycbzbSUUvFZ5RxTnlLo5XyANXEHvzcnQTVbl-QSa0pV-K7tpvtwXyimkQsgcGtt26dM56HA/exec?callback=handleData';
 document.head.appendChild(script);
+
+
+
+
+
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 </body>
 </html>
